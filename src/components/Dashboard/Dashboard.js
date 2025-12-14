@@ -76,8 +76,8 @@ const Dashboard = ({ certificates, onNavigate }) => {
         <div className="recent-certificates">
           <h2>Recent Certificates</h2>
           <div className="recent-list">
-            {certificates.slice(0, 3).map((cert, index) => (
-              <div key={index} className="recent-item">
+            {certificates.slice(0, 3).map((cert) => (
+              <div key={cert.certificateNumber} className="recent-item">
                 <div className="recent-info">
                   <h4>{cert.participantName}</h4>
                   <p>{cert.courseTitle}</p>

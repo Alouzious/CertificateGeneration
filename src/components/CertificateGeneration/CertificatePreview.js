@@ -33,7 +33,12 @@ const CertificatePreview = ({ data }) => {
       pdf.save(`certificate-${data.certificateNumber}.pdf`);
     } catch (error) {
       console.error('Error generating PDF:', error);
-      alert('Failed to generate PDF. Please try again.');
+      // Show error in a more user-friendly way
+      const errorMsg = document.createElement('div');
+      errorMsg.style.cssText = 'position:fixed;top:20px;right:20px;background:#f44336;color:white;padding:16px 24px;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,0.1);z-index:9999;';
+      errorMsg.textContent = 'Failed to generate PDF. Please try again.';
+      document.body.appendChild(errorMsg);
+      setTimeout(() => errorMsg.remove(), 3000);
     }
   };
 

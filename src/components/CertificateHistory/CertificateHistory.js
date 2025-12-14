@@ -39,8 +39,8 @@ const CertificateHistory = ({ certificates }) => {
 
       {filteredCertificates.length > 0 ? (
         <div className="certificates-grid">
-          {filteredCertificates.map((cert, index) => (
-            <CertificateCard key={index} certificate={cert} />
+          {filteredCertificates.map((cert) => (
+            <CertificateCard key={cert.certificateNumber} certificate={cert} />
           ))}
         </div>
       ) : (
